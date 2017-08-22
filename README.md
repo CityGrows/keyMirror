@@ -46,6 +46,16 @@ Input:  `{key1: val1, key2: val2}`
 
 Output: `{key1: key1, key2: key2}`
 
+keyMirror also takes a prefix as a second argument
+
+```javascript
+var USER_CONSTANTS = keyMirror({
+  LOGIN: null
+}, 'USER');
+
+USER_CONSTANTS.LOGIN // => 'USER_LOGIN'
+```
+
 I sometimes use this with lodash - use the following upon your first use of lodash to mix it in:
 
 ```javascript
