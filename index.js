@@ -35,7 +35,7 @@
  * @param {object} obj
  * @return {object}
  */
-var keyMirror = function(obj, prefix = '') {
+var keyMirror = function(obj, prefix) {
   var ret = {};
   var key;
   if (!(obj instanceof Object && !Array.isArray(obj))) {
@@ -43,7 +43,7 @@ var keyMirror = function(obj, prefix = '') {
   }
   for (key in obj) {
     if (obj.hasOwnProperty(key)) {
-      const value = (prefix ? `${prefix}_` : '') + key;
+      var value = (prefix ? `${prefix}_` : '') + key;
       ret[key] = value;
     }
   }
